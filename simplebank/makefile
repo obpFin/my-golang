@@ -7,6 +7,9 @@ psql:
 createdb:
 	 docker exec -it postgres12  createdb --username=root --owner=root simple_bank
 
+startdb:
+	docker start postgres12
+
 dropdb:
 	 docker exec -it postgres12  dropdb simple_bank
 
@@ -28,4 +31,4 @@ sqlcgenerate:
 test:
 	go test -v -cover ./...
 
-.PHONY: postgres psql createdb dropdb migrateup migratedown sqlcinit sqlcgenerate test
+.PHONY: postgres psql createdb startdb dropdb migrateup migratedown sqlcinit sqlcgenerate test
