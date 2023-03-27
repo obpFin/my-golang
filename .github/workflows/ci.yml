@@ -3,6 +3,10 @@
 
 name: ci-test
 
+defaults:
+  run:
+    working-directory: simplebank
+
 on:
   push:
     branches: [ "master" ]
